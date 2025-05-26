@@ -1,4 +1,2 @@
-ignoredBuiltDependencies:
-  - '@tailwindcss/oxide'
+onlyBuiltDependencies:
   - sharp
-  - unrs-resolver
