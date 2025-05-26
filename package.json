@@ -9,8 +9,7 @@
   "homepage": "https://github.com/lyminhnghia/next-shadcn-boilerplate",
   "engines": {
     "node": ">=20.0.0",
-    "npm": ">=8.0.0",
-    "pnpm": ">=8.0.0"
+    "pnpm": ">=10.0.0"
   },
   "scripts": {
     "dev": "next dev --turbopack",
