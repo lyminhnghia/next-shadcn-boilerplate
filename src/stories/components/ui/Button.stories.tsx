@@ -103,7 +103,6 @@ export const Loading: Story = {
     </div>
   )
 };
-
 // Disabled state
 export const Disabled: Story = {
   render: () => (
