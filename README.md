@@ -23,8 +23,6 @@ This is a starter template using the following stack:
 - Pre-commit Hooks - [Husky](https://typicode.github.io/husky/)
 - Formatting - [Prettier](https://prettier.io)
 
-_If you are looking for a React admin dashboard starter, here is the [repo](https://github.com/Kiranism/react-shadcn-dashboard-starter)._
-
 ## Feature based organization
 
 ```plaintext
@@ -38,24 +36,27 @@ src/
 │ │ └── page.tsx
 │ └── api/ # API routes
 ├── components/ # Shared components
-│ ├── ui/ # UI components (buttons, inputs, etc.)
+│ ├── ui/     # UI components (buttons, inputs, etc.)
 │ └── layout/ # Layout components (header, sidebar, etc.)
 ├── features/ # Feature-based modules
 │ ├── feature/
 │ │ ├── components/ # Feature-specific components
-│ │ ├── actions/ # Server actions
-│ │ ├── schemas/ # Form validation schemas
-│ │ └── utils/ # Feature-specific utilities
-├── lib/ # Core utilities and configurations
-│ ├── auth/ # Auth configuration
-│ ├── db/ # Database utilities
-│ └── utils/ # Shared utilities
+│ │ ├── actions/    # Server actions
+│ │ ├── schemas/    # Form validation schemas
+│ │ └── utils/      # Feature-specific utilities
 ├── hooks/ # Custom hooks
 │ └── use-debounce.ts
+├── lib/ # Core utilities and configurations
+│ ├── auth/  # Auth configuration
+│ ├── db/    # Database utilities
+│ └── utils/ # Shared utilities
+├── services/ # Services provider
+| ├── api/        # Api services
+│ └── websocket/  # Websocket services
 ├── stores/ # Zustand stores
 │ └── index.ts
 ├── styles/ # Config global styles and themes
-└── types/ # TypeScript types
+└── types/  # TypeScript types
 ```
 
 ## Getting Started
