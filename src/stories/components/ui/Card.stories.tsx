@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import '@/styles/globals.css';
 import {
   Card,
@@ -11,6 +11,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import Image from 'next/image';
 
 const meta: Meta<typeof Card> = {
   title: 'UI/Card',
@@ -80,7 +81,7 @@ export const WithImage: Story = {
   render: () => (
     <Card className='w-[350px]'>
       <CardHeader>
-        <img
+        <Image
           src='https://images.unsplash.com/photo-1522252234503-e356532cafd5'
           alt='Card cover'
           className='h-48 w-full object-cover'

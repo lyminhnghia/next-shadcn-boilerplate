@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import '@/styles/globals.css';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -103,7 +103,7 @@ export const Default: Story = {
                   <Input placeholder='shadcn@example.com' {...field} />
                 </FormControl>
                 <FormDescription>
-                  We'll never share your email with anyone else.
+                  We&apos;ll never share your email with anyone else.
                 </FormDescription>
                 <FormMessage />
               </FormItem>

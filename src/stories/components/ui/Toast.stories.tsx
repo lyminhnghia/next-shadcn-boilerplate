@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import '@/styles/globals.css';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
@@ -53,7 +53,7 @@ export const WithAction: Story = {
               description: 'There was a problem with your request.',
               action: {
                 label: 'Try again',
-                onClick: () => console.log('Try again clicked')
+                onClick: () => {}
               }
             });
           }}
@@ -133,13 +133,14 @@ export const WithRichContent: Story = {
                     <p className='text-sm'>Message from John Doe</p>
                   </div>
                   <p className='text-muted-foreground text-sm'>
-                    "Hey, I've sent you the latest design files..."
+                    &quot;Hey, I&apos;ve sent you the latest design
+                    files...&quot;
                   </p>
                 </div>
               ),
               action: {
                 label: 'Reply',
-                onClick: () => console.log('Reply clicked')
+                onClick: () => {}
               }
             });
           }}

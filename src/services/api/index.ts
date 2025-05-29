@@ -2,7 +2,7 @@ import { AxiosRequestConfig } from 'axios';
 import { axiosClient } from './config/axios.config';
 import { handleApiError } from './utils/error-handler';
 import { transformResponse } from './utils/response-handler';
-import { ApiRequestConfig, ApiResponse, HttpMethod } from './types/api.types';
+import { ApiRequestConfig, ApiResponse } from './types/api.types';
 
 export class BaseApiService {
   protected async request<T>({

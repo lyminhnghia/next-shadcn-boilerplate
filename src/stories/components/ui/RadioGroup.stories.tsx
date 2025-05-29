@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import '@/styles/globals.css';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
@@ -186,7 +186,7 @@ export const WithHelperText: Story = {
               None
             </Label>
             <p className='text-muted-foreground text-sm'>
-              Don't receive any notifications.
+              Don&apos;t receive any notifications.
             </p>
           </div>
         </div>

@@ -160,7 +160,7 @@ export class WebSocketClientImpl implements WebSocketClient {
         this.handleMessage(message);
         this.config.onMessage?.(event);
       } catch (error) {
-        console.error('Failed to parse WebSocket message:', error);
+        this.handleError(error as Error);
       }
     };
   }
@@ -198,6 +198,7 @@ export class WebSocketClientImpl implements WebSocketClient {
       try {
         await this.connect();
       } catch (error) {
+        this.handleError(error as Error);
         if (
           this.state.reconnectAttempts >= (this.config.reconnectAttempts || 0)
         ) {

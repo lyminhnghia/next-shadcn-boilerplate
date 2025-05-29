@@ -21,7 +21,7 @@ axiosClient.client.interceptors.response.use(
     return response;
   },
   async (error: AxiosError) => {
-    const originalRequest = error.config;
+    // const originalRequest = error.config;
 
     // Handle 401 Unauthorized errors
     if (error.response?.status === 401) {
