@@ -1,9 +1,7 @@
 import { AxiosResponse } from 'axios';
 import { ApiResponse } from '../types/api.types';
 
-export const transformResponse = <T>(
-  response: AxiosResponse
-): ApiResponse<T> => {
+export const transformResponse = <T>(response: AxiosResponse): ApiResponse<T> => {
   const { data, status } = response;
 
   // If the response is already in our ApiResponse format, return it
@@ -16,18 +14,15 @@ export const transformResponse = <T>(
     data: data as T,
     status,
     message: 'Success',
-    success: true
+    success: true,
   };
 };
 
-export const createSuccessResponse = <T>(
-  data: T,
-  message = 'Success'
-): ApiResponse<T> => ({
+export const createSuccessResponse = <T>(data: T, message = 'Success'): ApiResponse<T> => ({
   data,
   status: 200,
   message,
-  success: true
+  success: true,
 });
 
 export const createErrorResponse = <T>(
@@ -38,5 +33,5 @@ export const createErrorResponse = <T>(
   data,
   status,
   message,
-  success: false
+  success: false,
 });

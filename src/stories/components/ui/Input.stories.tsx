@@ -10,12 +10,12 @@ const meta: Meta<typeof Input> = {
   argTypes: {
     type: {
       control: 'select',
-      options: ['text', 'email', 'password', 'number', 'tel', 'url', 'search']
+      options: ['text', 'email', 'password', 'number', 'tel', 'url', 'search'],
     },
     disabled: {
-      control: 'boolean'
-    }
-  }
+      control: 'boolean',
+    },
+  },
 };
 
 export default meta;
@@ -24,8 +24,8 @@ type Story = StoryObj<typeof Input>;
 // Basic input
 export const Default: Story = {
   args: {
-    placeholder: 'Enter text here...'
-  }
+    placeholder: 'Enter text here...',
+  },
 };
 
 // Input with label
@@ -35,7 +35,7 @@ export const WithLabel: Story = {
       <Label htmlFor='email'>Email</Label>
       <Input type='email' id='email' placeholder='Enter your email' />
     </div>
-  )
+  ),
 };
 
 // Input with error state
@@ -51,19 +51,17 @@ export const WithError: Story = {
         placeholder='Enter your email'
         className='border-destructive'
       />
-      <p className='text-destructive text-sm'>
-        Please enter a valid email address.
-      </p>
+      <p className='text-destructive text-sm'>Please enter a valid email address.</p>
     </div>
-  )
+  ),
 };
 
 // Disabled input
 export const Disabled: Story = {
   args: {
     placeholder: 'Disabled input',
-    disabled: true
-  }
+    disabled: true,
+  },
 };
 
 // Input with icon
@@ -87,7 +85,7 @@ export const WithIcon: Story = {
       </svg>
       <Input type='search' placeholder='Search...' className='pl-8' />
     </div>
-  )
+  ),
 };
 
 // Input with helper text
@@ -97,11 +95,10 @@ export const WithHelperText: Story = {
       <Label htmlFor='username'>Username</Label>
       <Input type='text' id='username' placeholder='Enter your username' />
       <p className='text-muted-foreground text-sm'>
-        This is your public display name. It can be your real name or a
-        pseudonym.
+        This is your public display name. It can be your real name or a pseudonym.
       </p>
     </div>
-  )
+  ),
 };
 
 // Input with different sizes
@@ -112,5 +109,5 @@ export const Sizes: Story = {
       <Input type='text' placeholder='Default input' />
       <Input type='text' placeholder='Large input' className='h-12' />
     </div>
-  )
+  ),
 };

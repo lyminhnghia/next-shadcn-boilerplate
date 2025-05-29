@@ -3,10 +3,7 @@
 import { IconX, IconUpload } from '@tabler/icons-react';
 import Image from 'next/image';
 import * as React from 'react';
-import Dropzone, {
-  type DropzoneProps,
-  type FileRejection
-} from 'react-dropzone';
+import Dropzone, { type DropzoneProps, type FileRejection } from 'react-dropzone';
 import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
@@ -109,7 +106,7 @@ export function FileUploader(props: FileUploaderProps) {
 
   const [files, setFiles] = useControllableState({
     prop: valueProp,
-    onChange: onValueChange
+    onChange: onValueChange,
   });
 
   const onDrop = React.useCallback(
@@ -126,7 +123,7 @@ export function FileUploader(props: FileUploaderProps) {
 
       const newFiles = acceptedFiles.map((file) =>
         Object.assign(file, {
-          preview: URL.createObjectURL(file)
+          preview: URL.createObjectURL(file),
         })
       );
 
@@ -140,13 +137,8 @@ export function FileUploader(props: FileUploaderProps) {
         });
       }
 
-      if (
-        onUpload &&
-        updatedFiles.length > 0 &&
-        updatedFiles.length <= maxFiles
-      ) {
-        const target =
-          updatedFiles.length > 0 ? `${updatedFiles.length} files` : `file`;
+      if (onUpload && updatedFiles.length > 0 && updatedFiles.length <= maxFiles) {
+        const target = updatedFiles.length > 0 ? `${updatedFiles.length} files` : `file`;
 
         toast.promise(onUpload(updatedFiles), {
           loading: `Uploading ${target}...`,
@@ -154,7 +146,7 @@ export function FileUploader(props: FileUploaderProps) {
             setFiles([]);
             return `${target} uploaded`;
           },
-          error: `Failed to upload ${target}`
+          error: `Failed to upload ${target}`,
         });
       }
     },
@@ -210,22 +202,14 @@ export function FileUploader(props: FileUploaderProps) {
             {isDragActive ? (
               <div className='flex flex-col items-center justify-center gap-4 sm:px-5'>
                 <div className='rounded-full border border-dashed p-3'>
-                  <IconUpload
-                    className='text-muted-foreground size-7'
-                    aria-hidden='true'
-                  />
+                  <IconUpload className='text-muted-foreground size-7' aria-hidden='true' />
                 </div>
-                <p className='text-muted-foreground font-medium'>
-                  Drop the files here
-                </p>
+                <p className='text-muted-foreground font-medium'>Drop the files here</p>
               </div>
             ) : (
               <div className='flex flex-col items-center justify-center gap-4 sm:px-5'>
                 <div className='rounded-full border border-dashed p-3'>
-                  <IconUpload
-                    className='text-muted-foreground size-7'
-                    aria-hidden='true'
-                  />
+                  <IconUpload className='text-muted-foreground size-7' aria-hidden='true' />
                 </div>
                 <div className='space-y-px'>
                   <p className='text-muted-foreground font-medium'>
@@ -284,12 +268,8 @@ function FileCard({ file, progress, onRemove }: FileCardProps) {
         ) : null}
         <div className='flex w-full flex-col gap-2'>
           <div className='space-y-px'>
-            <p className='text-foreground/80 line-clamp-1 text-sm font-medium'>
-              {file.name}
-            </p>
-            <p className='text-muted-foreground text-xs'>
-              {formatBytes(file.size)}
-            </p>
+            <p className='text-foreground/80 line-clamp-1 text-sm font-medium'>{file.name}</p>
+            <p className='text-muted-foreground text-xs'>{formatBytes(file.size)}</p>
           </div>
           {progress ? <Progress value={progress} /> : null}
         </div>

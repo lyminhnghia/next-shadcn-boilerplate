@@ -9,9 +9,9 @@ const meta: Meta<typeof RadioGroup> = {
   tags: ['autodocs'],
   argTypes: {
     disabled: {
-      control: 'boolean'
-    }
-  }
+      control: 'boolean',
+    },
+  },
 };
 
 export default meta;
@@ -34,7 +34,7 @@ export const Default: Story = {
         <Label htmlFor='r3'>Compact</Label>
       </div>
     </RadioGroup>
-  )
+  ),
 };
 
 // Radio group with description
@@ -50,9 +50,7 @@ export const WithDescription: Story = {
           >
             Card payment
           </Label>
-          <p className='text-muted-foreground text-sm'>
-            Pay with your credit card.
-          </p>
+          <p className='text-muted-foreground text-sm'>Pay with your credit card.</p>
         </div>
       </div>
       <div className='flex items-start space-x-2'>
@@ -64,9 +62,7 @@ export const WithDescription: Story = {
           >
             PayPal
           </Label>
-          <p className='text-muted-foreground text-sm'>
-            Pay with your PayPal account.
-          </p>
+          <p className='text-muted-foreground text-sm'>Pay with your PayPal account.</p>
         </div>
       </div>
       <div className='flex items-start space-x-2'>
@@ -78,13 +74,11 @@ export const WithDescription: Story = {
           >
             Apple Pay
           </Label>
-          <p className='text-muted-foreground text-sm'>
-            Pay with your Apple Pay account.
-          </p>
+          <p className='text-muted-foreground text-sm'>Pay with your Apple Pay account.</p>
         </div>
       </div>
     </RadioGroup>
-  )
+  ),
 };
 
 // Disabled radio group
@@ -110,7 +104,7 @@ export const Disabled: Story = {
         </Label>
       </div>
     </RadioGroup>
-  )
+  ),
 };
 
 // Radio group with error state
@@ -121,10 +115,7 @@ export const WithError: Story = {
         <div className='flex items-start space-x-2'>
           <RadioGroupItem value='option-1' id='error-1' />
           <div className='grid gap-1.5 leading-none'>
-            <Label
-              htmlFor='error-1'
-              className='text-destructive text-sm leading-none font-medium'
-            >
+            <Label htmlFor='error-1' className='text-destructive text-sm leading-none font-medium'>
               Option 1
             </Label>
           </div>
@@ -132,20 +123,15 @@ export const WithError: Story = {
         <div className='flex items-start space-x-2'>
           <RadioGroupItem value='option-2' id='error-2' />
           <div className='grid gap-1.5 leading-none'>
-            <Label
-              htmlFor='error-2'
-              className='text-destructive text-sm leading-none font-medium'
-            >
+            <Label htmlFor='error-2' className='text-destructive text-sm leading-none font-medium'>
               Option 2
             </Label>
           </div>
         </div>
       </RadioGroup>
-      <p className='text-destructive text-sm'>
-        Please select an option to continue.
-      </p>
+      <p className='text-destructive text-sm'>Please select an option to continue.</p>
     </div>
-  )
+  ),
 };
 
 // Radio group with helper text
@@ -160,18 +146,13 @@ export const WithHelperText: Story = {
             <Label htmlFor='all' className='text-sm leading-none font-medium'>
               All notifications
             </Label>
-            <p className='text-muted-foreground text-sm'>
-              Receive notifications for all activity.
-            </p>
+            <p className='text-muted-foreground text-sm'>Receive notifications for all activity.</p>
           </div>
         </div>
         <div className='flex items-start space-x-2'>
           <RadioGroupItem value='important' id='important' />
           <div className='grid gap-1.5 leading-none'>
-            <Label
-              htmlFor='important'
-              className='text-sm leading-none font-medium'
-            >
+            <Label htmlFor='important' className='text-sm leading-none font-medium'>
               Important only
             </Label>
             <p className='text-muted-foreground text-sm'>
@@ -185,9 +166,7 @@ export const WithHelperText: Story = {
             <Label htmlFor='none' className='text-sm leading-none font-medium'>
               None
             </Label>
-            <p className='text-muted-foreground text-sm'>
-              Don&apos;t receive any notifications.
-            </p>
+            <p className='text-muted-foreground text-sm'>Don&apos;t receive any notifications.</p>
           </div>
         </div>
       </RadioGroup>
@@ -195,5 +174,5 @@ export const WithHelperText: Story = {
         You can change your notification preferences at any time.
       </p>
     </div>
-  )
+  ),
 };

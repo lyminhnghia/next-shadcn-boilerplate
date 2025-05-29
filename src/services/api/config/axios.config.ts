@@ -3,7 +3,7 @@ import axios, {
   AxiosInstance,
   AxiosRequestConfig,
   HeadersDefaults,
-  RawAxiosRequestHeaders
+  RawAxiosRequestHeaders,
 } from 'axios';
 import { ApiClientConfig } from '../types/api.types';
 
@@ -11,9 +11,9 @@ const defaultConfig: ApiClientConfig = {
   baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api',
   timeout: 10000, // 10 seconds
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   },
-  withCredentials: true
+  withCredentials: true,
 };
 
 class AxiosClient {
@@ -25,8 +25,8 @@ class AxiosClient {
       ...config,
       headers: {
         ...defaultConfig.headers,
-        ...config.headers
-      } as RawAxiosRequestHeaders
+        ...config.headers,
+      } as RawAxiosRequestHeaders,
     });
   }
 
@@ -43,8 +43,7 @@ class AxiosClient {
 
   public setAuthToken(token: string | null): void {
     if (token) {
-      this.axiosInstance.defaults.headers.common['Authorization'] =
-        `Bearer ${token}`;
+      this.axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     } else {
       delete this.axiosInstance.defaults.headers.common['Authorization'];
     }
@@ -60,10 +59,10 @@ class AxiosClient {
       ...config,
       headers: {
         ...this.axiosInstance.defaults.headers,
-        ...config.headers
+        ...config.headers,
       } as HeadersDefaults & {
         [key: string]: AxiosHeaderValue;
-      }
+      },
     };
   }
 }

@@ -3,10 +3,12 @@
   "bracketSpacing": true,
   "semi": true,
   "useTabs": false,
-  "trailingComma": "none",
+  "trailingComma": "es5",
   "jsxSingleQuote": true,
   "singleQuote": true,
   "tabWidth": 2,
   "endOfLine": "lf",
+  "printWidth": 100,
+  "bracketSameLine": false,
   "plugins": ["prettier-plugin-tailwindcss"]
 }

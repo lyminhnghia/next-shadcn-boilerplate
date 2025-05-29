@@ -11,30 +11,23 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: [
-        'default',
-        'destructive',
-        'outline',
-        'secondary',
-        'ghost',
-        'link'
-      ],
-      description: 'The visual style of the button'
+      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
+      description: 'The visual style of the button',
     },
     size: {
       control: 'select',
       options: ['default', 'sm', 'lg', 'icon'],
-      description: 'The size of the button'
+      description: 'The size of the button',
     },
     disabled: {
       control: 'boolean',
-      description: 'Whether the button is disabled'
+      description: 'Whether the button is disabled',
     },
     asChild: {
       control: 'boolean',
-      description: 'Whether to render as a child component'
-    }
-  }
+      description: 'Whether to render as a child component',
+    },
+  },
 };
 
 export default meta;
@@ -44,8 +37,8 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
   args: {
     children: 'Button',
-    variant: 'default'
-  }
+    variant: 'default',
+  },
 };
 
 // All variants
@@ -59,7 +52,7 @@ export const Variants: Story = {
       <Button variant='ghost'>Ghost</Button>
       <Button variant='link'>Link</Button>
     </div>
-  )
+  ),
 };
 
 // All sizes
@@ -73,7 +66,7 @@ export const Sizes: Story = {
         <IconBrandGithub className='h-4 w-4' />
       </Button>
     </div>
-  )
+  ),
 };
 
 // With icons
@@ -89,7 +82,7 @@ export const WithIcons: Story = {
         Sign in with GitHub
       </Button>
     </div>
-  )
+  ),
 };
 
 // Loading state
@@ -101,7 +94,7 @@ export const Loading: Story = {
         Loading...
       </Button>
     </div>
-  )
+  ),
 };
 // Disabled state
 export const Disabled: Story = {
@@ -126,5 +119,5 @@ export const Disabled: Story = {
         Link
       </Button>
     </div>
-  )
+  ),
 };

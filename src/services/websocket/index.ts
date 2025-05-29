@@ -3,7 +3,7 @@ import {
   WebSocketClient,
   WebSocketClientConfig,
   WebSocketEventHandler,
-  WebSocketMessage
+  WebSocketMessage,
 } from './types/websocket.types';
 
 export class BaseWebSocketService {
@@ -29,10 +29,7 @@ export class BaseWebSocketService {
     this.client.send(type, payload);
   }
 
-  protected subscribe<T>(
-    type: string,
-    handler: WebSocketEventHandler<T>
-  ): () => void {
+  protected subscribe<T>(type: string, handler: WebSocketEventHandler<T>): () => void {
     return this.client.subscribe(type, handler);
   }
 
@@ -47,8 +44,7 @@ export class ChatWebSocketService extends BaseWebSocketService {
   private readonly baseUrl: string;
 
   private constructor() {
-    const wsUrl =
-      process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:3000/ws/chat';
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:3000/ws/chat';
     super({
       url: wsUrl,
       autoReconnect: true,
@@ -63,7 +59,7 @@ export class ChatWebSocketService extends BaseWebSocketService {
       },
       onError: (error) => {
         console.error('Chat WebSocket error:', error);
-      }
+      },
     });
     this.baseUrl = wsUrl;
   }
@@ -89,24 +85,18 @@ export class ChatWebSocketService extends BaseWebSocketService {
   }
 
   public onMessage(
-    handler: (
-      message: WebSocketMessage<{ text: string; sender: string }>
-    ) => void
+    handler: (message: WebSocketMessage<{ text: string; sender: string }>) => void
   ): () => void {
     return this.subscribe('chat:message', handler);
   }
 
   public onUserJoined(
-    handler: (
-      message: WebSocketMessage<{ userId: string; username: string }>
-    ) => void
+    handler: (message: WebSocketMessage<{ userId: string; username: string }>) => void
   ): () => void {
     return this.subscribe('chat:user:joined', handler);
   }
 
-  public onUserLeft(
-    handler: (message: WebSocketMessage<{ userId: string }>) => void
-  ): () => void {
+  public onUserLeft(handler: (message: WebSocketMessage<{ userId: string }>) => void): () => void {
     return this.subscribe('chat:user:left', handler);
   }
 }

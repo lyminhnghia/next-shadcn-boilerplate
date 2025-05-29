@@ -22,9 +22,7 @@ export interface WebSocketState {
   lastError?: Error;
 }
 
-export type WebSocketEventHandler<T = any> = (
-  message: WebSocketMessage<T>
-) => void;
+export type WebSocketEventHandler<T = any> = (message: WebSocketMessage<T>) => void;
 
 export interface WebSocketEventMap {
   [key: string]: WebSocketEventHandler[];
@@ -43,10 +41,7 @@ export interface WebSocketClient {
   connect(): Promise<void>;
   disconnect(): void;
   send<T>(type: WebSocketEventType, payload: T): void;
-  subscribe<T>(
-    type: WebSocketEventType,
-    handler: WebSocketEventHandler<T>
-  ): () => void;
+  subscribe<T>(type: WebSocketEventType, handler: WebSocketEventHandler<T>): () => void;
   unsubscribe(type: WebSocketEventType, handler: WebSocketEventHandler): void;
   getState(): WebSocketState;
 }

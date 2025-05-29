@@ -10,18 +10,15 @@ const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
+  allConfig: js.configs.all,
 });
 
 export default defineConfig([
   {
-    extends: compat.extends(
-      'next/core-web-vitals',
-      'plugin:storybook/recommended'
-    ),
+    extends: compat.extends('next/core-web-vitals', 'plugin:storybook/recommended'),
 
     plugins: {
-      '@typescript-eslint': typescriptEslint
+      '@typescript-eslint': typescriptEslint,
     },
 
     rules: {
@@ -29,7 +26,7 @@ export default defineConfig([
       'import/no-unresolved': 'off',
       'import/named': 'off',
       'no-console': 'warn',
-      'react-hooks/exhaustive-deps': 'warn'
-    }
-  }
+      'react-hooks/exhaustive-deps': 'warn',
+    },
+  },
 ]);

@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -20,9 +20,9 @@ const meta: Meta<typeof Card> = {
   argTypes: {
     className: {
       control: 'text',
-      description: 'Additional CSS classes'
-    }
-  }
+      description: 'Additional CSS classes',
+    },
+  },
 };
 
 export default meta;
@@ -43,7 +43,7 @@ export const Default: Story = {
         <p>Card Footer</p>
       </CardFooter>
     </Card>
-  )
+  ),
 };
 
 // Card with form
@@ -73,7 +73,7 @@ export const WithForm: Story = {
         <Button>Deploy</Button>
       </CardFooter>
     </Card>
-  )
+  ),
 };
 
 // Card with image
@@ -91,15 +91,15 @@ export const WithImage: Story = {
       </CardHeader>
       <CardContent>
         <p className='text-muted-foreground text-sm'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua.
         </p>
       </CardContent>
       <CardFooter>
         <Button className='w-full'>Add to Cart</Button>
       </CardFooter>
     </Card>
-  )
+  ),
 };
 
 // Card with stats
@@ -113,15 +113,11 @@ export const WithStats: Story = {
       <CardContent>
         <div className='grid grid-cols-2 gap-4'>
           <div className='space-y-2'>
-            <p className='text-muted-foreground text-sm font-medium'>
-              Total Users
-            </p>
+            <p className='text-muted-foreground text-sm font-medium'>Total Users</p>
             <p className='text-2xl font-bold'>1,234</p>
           </div>
           <div className='space-y-2'>
-            <p className='text-muted-foreground text-sm font-medium'>
-              Active Now
-            </p>
+            <p className='text-muted-foreground text-sm font-medium'>Active Now</p>
             <p className='text-2xl font-bold'>123</p>
           </div>
           <div className='space-y-2'>
@@ -140,5 +136,5 @@ export const WithStats: Story = {
         </Button>
       </CardFooter>
     </Card>
-  )
+  ),
 };

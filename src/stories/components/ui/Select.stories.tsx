@@ -7,7 +7,7 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 
@@ -17,9 +17,9 @@ const meta: Meta<typeof Select> = {
   tags: ['autodocs'],
   argTypes: {
     disabled: {
-      control: 'boolean'
-    }
-  }
+      control: 'boolean',
+    },
+  },
 };
 
 export default meta;
@@ -39,7 +39,7 @@ export const Default: Story = {
         <SelectItem value='grape'>Grape</SelectItem>
       </SelectContent>
     </Select>
-  )
+  ),
 };
 
 // Select with label
@@ -59,7 +59,7 @@ export const WithLabel: Story = {
         </SelectContent>
       </Select>
     </div>
-  )
+  ),
 };
 
 // Select with groups
@@ -90,7 +90,7 @@ export const WithGroups: Story = {
         </SelectGroup>
       </SelectContent>
     </Select>
-  )
+  ),
 };
 
 // Disabled select
@@ -106,7 +106,7 @@ export const Disabled: Story = {
         <SelectItem value='option3'>Option 3</SelectItem>
       </SelectContent>
     </Select>
-  )
+  ),
 };
 
 // Select with error state
@@ -129,7 +129,7 @@ export const WithError: Story = {
       </Select>
       <p className='text-destructive text-sm'>Please select a framework.</p>
     </div>
-  )
+  ),
 };
 
 // Select with helper text
@@ -151,5 +151,5 @@ export const WithHelperText: Story = {
         Select your preferred theme for the application.
       </p>
     </div>
-  )
+  ),
 };

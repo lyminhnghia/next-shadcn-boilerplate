@@ -10,12 +10,12 @@ const meta: Meta<typeof Checkbox> = {
   tags: ['autodocs'],
   argTypes: {
     disabled: {
-      control: 'boolean'
+      control: 'boolean',
     },
     checked: {
-      control: 'boolean'
-    }
-  }
+      control: 'boolean',
+    },
+  },
 };
 
 export default meta;
@@ -28,7 +28,7 @@ export const Default: Story = {
       <Checkbox id='terms' />
       <Label htmlFor='terms'>Accept terms and conditions</Label>
     </div>
-  )
+  ),
 };
 
 // Checkbox with description
@@ -48,7 +48,7 @@ export const WithDescription: Story = {
         </p>
       </div>
     </div>
-  )
+  ),
 };
 
 // Disabled checkbox
@@ -63,7 +63,7 @@ export const Disabled: Story = {
         Disabled checkbox
       </Label>
     </div>
-  )
+  ),
 };
 
 // Checkbox with error state
@@ -85,7 +85,7 @@ export const WithError: Story = {
         You must accept the terms and conditions to continue.
       </p>
     </div>
-  )
+  ),
 };
 
 // Checkbox group
@@ -95,10 +95,7 @@ export const CheckboxGroup: Story = {
       <div className='flex items-start space-x-2'>
         <Checkbox id='notifications' />
         <div className='grid gap-1.5 leading-none'>
-          <Label
-            htmlFor='notifications'
-            className='text-sm leading-none font-medium'
-          >
+          <Label htmlFor='notifications' className='text-sm leading-none font-medium'>
             Push notifications
           </Label>
           <p className='text-muted-foreground text-sm'>
@@ -109,10 +106,7 @@ export const CheckboxGroup: Story = {
       <div className='flex items-start space-x-2'>
         <Checkbox id='marketing-group' />
         <div className='grid gap-1.5 leading-none'>
-          <Label
-            htmlFor='marketing-group'
-            className='text-sm leading-none font-medium'
-          >
+          <Label htmlFor='marketing-group' className='text-sm leading-none font-medium'>
             Marketing emails
           </Label>
           <p className='text-muted-foreground text-sm'>
@@ -132,15 +126,13 @@ export const CheckboxGroup: Story = {
         </div>
       </div>
     </div>
-  )
+  ),
 };
 
 // Indeterminate checkbox
 export const Indeterminate: Story = {
   render: () => {
-    const [checked, setChecked] = React.useState<boolean | 'indeterminate'>(
-      'indeterminate'
-    );
+    const [checked, setChecked] = React.useState<boolean | 'indeterminate'>('indeterminate');
 
     return (
       <div className='flex items-center space-x-2'>
@@ -149,13 +141,10 @@ export const Indeterminate: Story = {
           checked={checked}
           onCheckedChange={(value) => setChecked(value)}
         />
-        <Label
-          htmlFor='indeterminate'
-          className='text-sm leading-none font-medium'
-        >
+        <Label htmlFor='indeterminate' className='text-sm leading-none font-medium'>
           Indeterminate checkbox
         </Label>
       </div>
     );
-  }
+  },
 };

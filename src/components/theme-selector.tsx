@@ -10,44 +10,44 @@ import {
   SelectLabel,
   SelectSeparator,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from '@/components/ui/select';
 
 const DEFAULT_THEMES = [
   {
     name: 'Default',
-    value: 'default'
+    value: 'default',
   },
   {
     name: 'Blue',
-    value: 'blue'
+    value: 'blue',
   },
   {
     name: 'Green',
-    value: 'green'
+    value: 'green',
   },
   {
     name: 'Amber',
-    value: 'amber'
-  }
+    value: 'amber',
+  },
 ];
 
 const SCALED_THEMES = [
   {
     name: 'Default',
-    value: 'default-scaled'
+    value: 'default-scaled',
   },
   {
     name: 'Blue',
-    value: 'blue-scaled'
-  }
+    value: 'blue-scaled',
+  },
 ];
 
 const MONO_THEMES = [
   {
     name: 'Mono',
-    value: 'mono-scaled'
-  }
+    value: 'mono-scaled',
+  },
 ];
 
 export function ThemeSelector() {
@@ -63,9 +63,7 @@ export function ThemeSelector() {
           id='theme-selector'
           className='justify-start *:data-[slot=select-value]:w-12'
         >
-          <span className='text-muted-foreground hidden sm:block'>
-            Select a theme:
-          </span>
+          <span className='text-muted-foreground hidden sm:block'>Select a theme:</span>
           <span className='text-muted-foreground block sm:hidden'>Theme</span>
           <SelectValue placeholder='Select a theme' />
         </SelectTrigger>

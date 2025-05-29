@@ -1,18 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import '@/styles/globals.css';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
 import { InfoCircledIcon } from '@radix-ui/react-icons';
 
 const meta: Meta<typeof Tooltip> = {
   title: 'UI/Tooltip',
   component: Tooltip,
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default meta;
@@ -31,7 +26,7 @@ export const Default: Story = {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
+  ),
 };
 
 // Tooltip with icon
@@ -49,7 +44,7 @@ export const WithIcon: Story = {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
+  ),
 };
 
 // Tooltip with different positions
@@ -100,7 +95,7 @@ export const Positions: Story = {
         </Tooltip>
       </TooltipProvider>
     </div>
-  )
+  ),
 };
 
 // Tooltip with delay
@@ -116,7 +111,7 @@ export const WithDelay: Story = {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
+  ),
 };
 
 // Tooltip with custom styling
@@ -132,7 +127,7 @@ export const WithCustomStyling: Story = {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
+  ),
 };
 
 // Tooltip with rich content
@@ -147,8 +142,7 @@ export const WithRichContent: Story = {
           <div className='space-y-2'>
             <h4 className='font-medium'>Tooltip with rich content</h4>
             <p className='text-muted-foreground text-sm'>
-              This tooltip contains multiple elements and more detailed
-              information.
+              This tooltip contains multiple elements and more detailed information.
             </p>
             <div className='flex items-center gap-2 text-sm'>
               <span className='font-medium'>Status:</span>
@@ -158,5 +152,5 @@ export const WithRichContent: Story = {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
+  ),
 };

@@ -4,7 +4,7 @@ import {
   WebSocketEventHandler,
   WebSocketEventMap,
   WebSocketMessage,
-  WebSocketState
+  WebSocketState,
 } from '../types/websocket.types';
 
 const DEFAULT_CONFIG: Partial<WebSocketClientConfig> = {
@@ -12,7 +12,7 @@ const DEFAULT_CONFIG: Partial<WebSocketClientConfig> = {
   reconnectAttempts: 5,
   reconnectInterval: 3000,
   heartbeatInterval: 30000,
-  heartbeatMessage: 'ping'
+  heartbeatMessage: 'ping',
 };
 
 export class WebSocketClientImpl implements WebSocketClient {
@@ -24,16 +24,14 @@ export class WebSocketClientImpl implements WebSocketClient {
   private state: WebSocketState = {
     isConnected: false,
     isConnecting: false,
-    reconnectAttempts: 0
+    reconnectAttempts: 0,
   };
 
   private constructor(private config: WebSocketClientConfig) {
     this.config = { ...DEFAULT_CONFIG, ...config };
   }
 
-  public static getInstance(
-    config: WebSocketClientConfig
-  ): WebSocketClientImpl {
+  public static getInstance(config: WebSocketClientConfig): WebSocketClientImpl {
     if (!WebSocketClientImpl.instance) {
       WebSocketClientImpl.instance = new WebSocketClientImpl(config);
     }
@@ -94,16 +92,13 @@ export class WebSocketClientImpl implements WebSocketClient {
     const message: WebSocketMessage<T> = {
       type,
       payload,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     };
 
     this.socket.send(JSON.stringify(message));
   }
 
-  public subscribe<T>(
-    type: string,
-    handler: WebSocketEventHandler<T>
-  ): () => void {
+  public subscribe<T>(type: string, handler: WebSocketEventHandler<T>): () => void {
     if (!this.eventHandlers[type]) {
       this.eventHandlers[type] = [];
     }
@@ -116,9 +111,7 @@ export class WebSocketClientImpl implements WebSocketClient {
   public unsubscribe(type: string, handler: WebSocketEventHandler): void {
     if (!this.eventHandlers[type]) return;
 
-    this.eventHandlers[type] = this.eventHandlers[type].filter(
-      (h) => h !== handler
-    );
+    this.eventHandlers[type] = this.eventHandlers[type].filter((h) => h !== handler);
 
     if (this.eventHandlers[type].length === 0) {
       delete this.eventHandlers[type];
@@ -182,8 +175,7 @@ export class WebSocketClientImpl implements WebSocketClient {
 
   private shouldReconnect(event?: CloseEvent): boolean {
     if (!this.config.autoReconnect) return false;
-    if (this.state.reconnectAttempts >= (this.config.reconnectAttempts || 0))
-      return false;
+    if (this.state.reconnectAttempts >= (this.config.reconnectAttempts || 0)) return false;
     if (event?.wasClean) return false;
     return true;
   }
@@ -199,9 +191,7 @@ export class WebSocketClientImpl implements WebSocketClient {
         await this.connect();
       } catch (error) {
         this.handleError(error as Error);
-        if (
-          this.state.reconnectAttempts >= (this.config.reconnectAttempts || 0)
-        ) {
+        if (this.state.reconnectAttempts >= (this.config.reconnectAttempts || 0)) {
           this.config.onReconnectFailed?.();
         }
       }

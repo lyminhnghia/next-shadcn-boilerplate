@@ -10,7 +10,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
+  FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -19,7 +19,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Textarea } from '@/components/ui/textarea';
@@ -27,7 +27,7 @@ import { Textarea } from '@/components/ui/textarea';
 const meta: Meta<typeof Form> = {
   title: 'UI/Form',
   component: Form,
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default meta;
@@ -36,23 +36,23 @@ type Story = StoryObj<typeof Form>;
 // Form validation schema
 const formSchema = z.object({
   username: z.string().min(2, {
-    message: 'Username must be at least 2 characters.'
+    message: 'Username must be at least 2 characters.',
   }),
   email: z.string().email({
-    message: 'Please enter a valid email address.'
+    message: 'Please enter a valid email address.',
   }),
   password: z.string().min(8, {
-    message: 'Password must be at least 8 characters.'
+    message: 'Password must be at least 8 characters.',
   }),
   role: z.string({
-    required_error: 'Please select a role.'
+    required_error: 'Please select a role.',
   }),
   bio: z.string().max(160, {
-    message: 'Bio must not be longer than 160 characters.'
+    message: 'Bio must not be longer than 160 characters.',
   }),
   terms: z.boolean().refine((val) => val === true, {
-    message: 'You must accept the terms and conditions.'
-  })
+    message: 'You must accept the terms and conditions.',
+  }),
 });
 
 // Basic form
@@ -66,8 +66,8 @@ export const Default: Story = {
         password: '',
         role: '',
         bio: '',
-        terms: false
-      }
+        terms: false,
+      },
     });
 
     function onSubmit(values: z.infer<typeof formSchema>) {
@@ -86,9 +86,7 @@ export const Default: Story = {
                 <FormControl>
                   <Input placeholder='shadcn' {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
+                <FormDescription>This is your public display name.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -115,10 +113,7 @@ export const Default: Story = {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Role</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder='Select a role' />
@@ -130,9 +125,7 @@ export const Default: Story = {
                     <SelectItem value='guest'>Guest</SelectItem>
                   </SelectContent>
                 </Select>
-                <FormDescription>
-                  Select your role in the organization.
-                </FormDescription>
+                <FormDescription>Select your role in the organization.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -150,9 +143,7 @@ export const Default: Story = {
                     {...field}
                   />
                 </FormControl>
-                <FormDescription>
-                  You can @mention other users and organizations.
-                </FormDescription>
+                <FormDescription>You can @mention other users and organizations.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -163,10 +154,7 @@ export const Default: Story = {
             render={({ field }) => (
               <FormItem className='flex flex-row items-start space-y-0 space-x-3'>
                 <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className='space-y-1 leading-none'>
                   <FormLabel>Accept terms and conditions</FormLabel>
@@ -182,7 +170,7 @@ export const Default: Story = {
         </form>
       </Form>
     );
-  }
+  },
 };
 
 // Form with validation errors
@@ -196,8 +184,8 @@ export const WithValidationErrors: Story = {
         password: '123',
         role: '',
         bio: 'a'.repeat(200),
-        terms: false
-      }
+        terms: false,
+      },
     });
 
     // Trigger validation
@@ -251,10 +239,7 @@ export const WithValidationErrors: Story = {
             render={({ field }) => (
               <FormItem className='flex flex-row items-start space-y-0 space-x-3'>
                 <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className='space-y-1 leading-none'>
                   <FormLabel>Accept terms and conditions</FormLabel>
@@ -266,5 +251,5 @@ export const WithValidationErrors: Story = {
         </form>
       </Form>
     );
-  }
+  },
 };

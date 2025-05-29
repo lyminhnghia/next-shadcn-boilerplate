@@ -38,12 +38,12 @@ const createExampleSlice: StoreSlice<ExampleStore> = (set, get, store) => ({
       );
       set({ data: response });
     });
-  }
+  },
 });
 
 // Create the store
 export const useExampleStore = create<ExampleStore>()((...args) => ({
-  ...createExampleSlice(...args)
+  ...createExampleSlice(...args),
 }));
 
 // Example selectors

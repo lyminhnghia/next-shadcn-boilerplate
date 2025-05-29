@@ -19,12 +19,9 @@ export const handleApiError = (error: unknown): never => {
   if (error instanceof AxiosError) {
     const apiError: ApiError = {
       code: error.code || 'UNKNOWN_ERROR',
-      message:
-        error.response?.data?.message ||
-        error.message ||
-        'An unexpected error occurred',
+      message: error.response?.data?.message || error.message || 'An unexpected error occurred',
       status: error.response?.status || 500,
-      errors: error.response?.data?.errors
+      errors: error.response?.data?.errors,
     };
     throw new ApiException(apiError);
   }
@@ -36,9 +33,8 @@ export const handleApiError = (error: unknown): never => {
   // Handle unknown errors
   throw new ApiException({
     code: 'UNKNOWN_ERROR',
-    message:
-      error instanceof Error ? error.message : 'An unexpected error occurred',
-    status: 500
+    message: error instanceof Error ? error.message : 'An unexpected error occurred',
+    status: 500,
   });
 };
 

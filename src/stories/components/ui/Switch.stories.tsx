@@ -9,12 +9,12 @@ const meta: Meta<typeof Switch> = {
   tags: ['autodocs'],
   argTypes: {
     disabled: {
-      control: 'boolean'
+      control: 'boolean',
     },
     checked: {
-      control: 'boolean'
-    }
-  }
+      control: 'boolean',
+    },
+  },
 };
 
 export default meta;
@@ -27,7 +27,7 @@ export const Default: Story = {
       <Switch id='airplane-mode' />
       <Label htmlFor='airplane-mode'>Airplane Mode</Label>
     </div>
-  )
+  ),
 };
 
 // Switch with description
@@ -47,7 +47,7 @@ export const WithDescription: Story = {
         </p>
       </div>
     </div>
-  )
+  ),
 };
 
 // Disabled switch
@@ -62,7 +62,7 @@ export const Disabled: Story = {
         Disabled switch
       </Label>
     </div>
-  )
+  ),
 };
 
 // Switch with error state
@@ -84,7 +84,7 @@ export const WithError: Story = {
         You must accept the terms and conditions to continue.
       </p>
     </div>
-  )
+  ),
 };
 
 // Switch group
@@ -94,10 +94,7 @@ export const SwitchGroup: Story = {
       <div className='flex items-start space-x-2'>
         <Switch id='notifications' />
         <div className='grid gap-1.5 leading-none'>
-          <Label
-            htmlFor='notifications'
-            className='text-sm leading-none font-medium'
-          >
+          <Label htmlFor='notifications' className='text-sm leading-none font-medium'>
             Push notifications
           </Label>
           <p className='text-muted-foreground text-sm'>
@@ -108,10 +105,7 @@ export const SwitchGroup: Story = {
       <div className='flex items-start space-x-2'>
         <Switch id='marketing-group' />
         <div className='grid gap-1.5 leading-none'>
-          <Label
-            htmlFor='marketing-group'
-            className='text-sm leading-none font-medium'
-          >
+          <Label htmlFor='marketing-group' className='text-sm leading-none font-medium'>
             Marketing emails
           </Label>
           <p className='text-muted-foreground text-sm'>
@@ -131,7 +125,7 @@ export const SwitchGroup: Story = {
         </div>
       </div>
     </div>
-  )
+  ),
 };
 
 // Switch with helper text
@@ -142,10 +136,7 @@ export const WithHelperText: Story = {
       <div className='flex items-start space-x-2'>
         <Switch id='all-notifications' />
         <div className='grid gap-1.5 leading-none'>
-          <Label
-            htmlFor='all-notifications'
-            className='text-sm leading-none font-medium'
-          >
+          <Label htmlFor='all-notifications' className='text-sm leading-none font-medium'>
             All notifications
           </Label>
           <p className='text-muted-foreground text-sm'>
@@ -157,5 +148,5 @@ export const WithHelperText: Story = {
         You can change your notification preferences at any time.
       </p>
     </div>
-  )
+  ),
 };

@@ -19,7 +19,7 @@ export class BaseApiService {
         data,
         params,
         ...config,
-        signal: config.signal || undefined // Ensure signal is either undefined or AbortSignal
+        signal: config.signal || undefined, // Ensure signal is either undefined or AbortSignal
       };
 
       const response = await axiosClient.client.request(axiosConfig);
@@ -87,7 +87,7 @@ export class AuthService extends BaseApiService {
   public async login(email: string, password: string) {
     return this.post<{ token: string }>(`${this.baseUrl}/login`, {
       email,
-      password
+      password,
     });
   }
 

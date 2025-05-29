@@ -7,7 +7,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
+  DialogTrigger,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -20,13 +20,13 @@ const meta: Meta<typeof Dialog> = {
   argTypes: {
     open: {
       control: 'boolean',
-      description: 'Whether the dialog is open'
+      description: 'Whether the dialog is open',
     },
     onOpenChange: {
       action: 'onOpenChange',
-      description: 'Callback when the open state changes'
-    }
-  }
+      description: 'Callback when the open state changes',
+    },
+  },
 };
 
 export default meta;
@@ -55,7 +55,7 @@ export const Default: Story = {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  ),
 };
 
 // Dialog with form
@@ -77,21 +77,13 @@ export const WithForm: Story = {
             <Label htmlFor='name' className='text-right'>
               Name
             </Label>
-            <Input
-              id='name'
-              defaultValue='Pedro Duarte'
-              className='col-span-3'
-            />
+            <Input id='name' defaultValue='Pedro Duarte' className='col-span-3' />
           </div>
           <div className='grid grid-cols-4 items-center gap-4'>
             <Label htmlFor='username' className='text-right'>
               Username
             </Label>
-            <Input
-              id='username'
-              defaultValue='@peduarte'
-              className='col-span-3'
-            />
+            <Input id='username' defaultValue='@peduarte' className='col-span-3' />
           </div>
         </div>
         <DialogFooter>
@@ -100,7 +92,7 @@ export const WithForm: Story = {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  ),
 };
 
 // Confirmation dialog
@@ -114,8 +106,8 @@ export const Confirmation: Story = {
         <DialogHeader>
           <DialogTitle>Are you sure?</DialogTitle>
           <DialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            This action cannot be undone. This will permanently delete your account and remove your
+            data from our servers.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className='flex gap-2 sm:gap-0'>
@@ -124,7 +116,7 @@ export const Confirmation: Story = {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  ),
 };
 
 // Dialog with custom width
@@ -137,22 +129,16 @@ export const CustomWidth: Story = {
       <DialogContent className='sm:max-w-[600px]'>
         <DialogHeader>
           <DialogTitle>Wide Dialog</DialogTitle>
-          <DialogDescription>
-            This dialog has a custom width of 600px.
-          </DialogDescription>
+          <DialogDescription>This dialog has a custom width of 600px.</DialogDescription>
         </DialogHeader>
         <div className='grid grid-cols-2 gap-4 py-4'>
           <div className='space-y-2'>
             <Label>Column 1</Label>
-            <p className='text-muted-foreground text-sm'>
-              This is the first column of content.
-            </p>
+            <p className='text-muted-foreground text-sm'>This is the first column of content.</p>
           </div>
           <div className='space-y-2'>
             <Label>Column 2</Label>
-            <p className='text-muted-foreground text-sm'>
-              This is the second column of content.
-            </p>
+            <p className='text-muted-foreground text-sm'>This is the second column of content.</p>
           </div>
         </div>
         <DialogFooter>
@@ -161,5 +147,5 @@ export const CustomWidth: Story = {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  ),
 };

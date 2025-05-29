@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/sonner';
 const meta: Meta<typeof Toaster> = {
   title: 'UI/Toast',
   component: Toaster,
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default meta;
@@ -30,7 +30,7 @@ export const Default: Story = {
           variant='outline'
           onClick={() => {
             toast('Scheduled: Catch up', {
-              description: 'Friday, February 10, 2023 at 5:57 PM'
+              description: 'Friday, February 10, 2023 at 5:57 PM',
             });
           }}
         >
@@ -38,7 +38,7 @@ export const Default: Story = {
         </Button>
       </ToastDemo>
     );
-  }
+  },
 };
 
 // Toast with action
@@ -53,8 +53,8 @@ export const WithAction: Story = {
               description: 'There was a problem with your request.',
               action: {
                 label: 'Try again',
-                onClick: () => {}
-              }
+                onClick: () => {},
+              },
             });
           }}
         >
@@ -62,7 +62,7 @@ export const WithAction: Story = {
         </Button>
       </ToastDemo>
     );
-  }
+  },
 };
 
 // Toast with different variants
@@ -75,7 +75,7 @@ export const Variants: Story = {
             variant='outline'
             onClick={() => {
               toast('Default toast', {
-                description: 'This is a default toast message.'
+                description: 'This is a default toast message.',
               });
             }}
           >
@@ -85,7 +85,7 @@ export const Variants: Story = {
             variant='outline'
             onClick={() => {
               toast.error('Error', {
-                description: 'Something went wrong. Please try again.'
+                description: 'Something went wrong. Please try again.',
               });
             }}
           >
@@ -95,7 +95,7 @@ export const Variants: Story = {
             variant='outline'
             onClick={() => {
               toast.success('Success', {
-                description: 'Your action was completed successfully.'
+                description: 'Your action was completed successfully.',
               });
             }}
           >
@@ -105,7 +105,7 @@ export const Variants: Story = {
             variant='outline'
             onClick={() => {
               toast.warning('Warning', {
-                description: 'Please review your changes before proceeding.'
+                description: 'Please review your changes before proceeding.',
               });
             }}
           >
@@ -114,7 +114,7 @@ export const Variants: Story = {
         </div>
       </ToastDemo>
     );
-  }
+  },
 };
 
 // Toast with rich content
@@ -133,15 +133,14 @@ export const WithRichContent: Story = {
                     <p className='text-sm'>Message from John Doe</p>
                   </div>
                   <p className='text-muted-foreground text-sm'>
-                    &quot;Hey, I&apos;ve sent you the latest design
-                    files...&quot;
+                    &quot;Hey, I&apos;ve sent you the latest design files...&quot;
                   </p>
                 </div>
               ),
               action: {
                 label: 'Reply',
-                onClick: () => {}
-              }
+                onClick: () => {},
+              },
             });
           }}
         >
@@ -149,7 +148,7 @@ export const WithRichContent: Story = {
         </Button>
       </ToastDemo>
     );
-  }
+  },
 };
 
 // Toast with custom duration
@@ -162,7 +161,7 @@ export const WithCustomDuration: Story = {
           onClick={() => {
             toast('Custom duration', {
               description: 'This toast will stay for 10 seconds.',
-              duration: 10000
+              duration: 10000,
             });
           }}
         >
@@ -170,7 +169,7 @@ export const WithCustomDuration: Story = {
         </Button>
       </ToastDemo>
     );
-  }
+  },
 };
 
 // Multiple toasts
@@ -182,13 +181,13 @@ export const MultipleToasts: Story = {
           variant='outline'
           onClick={() => {
             toast('First toast', {
-              description: 'This is the first toast message.'
+              description: 'This is the first toast message.',
             });
             toast('Second toast', {
-              description: 'This is the second toast message.'
+              description: 'This is the second toast message.',
             });
             toast('Third toast', {
-              description: 'This is the third toast message.'
+              description: 'This is the third toast message.',
             });
           }}
         >
@@ -196,5 +195,5 @@ export const MultipleToasts: Story = {
         </Button>
       </ToastDemo>
     );
-  }
+  },
 };

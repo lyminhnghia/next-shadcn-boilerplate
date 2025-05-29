@@ -9,7 +9,7 @@ export function formatDate(
       month: opts.month ?? 'long',
       day: opts.day ?? 'numeric',
       year: opts.year ?? 'numeric',
-      ...opts
+      ...opts,
     }).format(new Date(date));
   } catch (_err: unknown) {
     return _err || 'Invalid date';

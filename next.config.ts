@@ -9,9 +9,9 @@ const baseConfig: NextConfig = {
       //   hostname: 'api.example.com',
       //   port: ''
       // }
-    ]
+    ],
   },
-  transpilePackages: ['geist']
+  transpilePackages: ['geist'],
 };
 
 let configWithPlugins = baseConfig;
