@@ -26,6 +26,7 @@ This is a starter template using the following stack:
 ## Feature based organization
 
 ```plaintext
+.storybook/ # Storybook directory
 src/
 ├── app/ # Next.js App Router directory
 │ ├── (auth)/ # Auth route group
@@ -54,7 +55,9 @@ src/
 | ├── api/        # Api services
 │ └── websocket/  # Websocket services
 ├── stores/ # Zustand stores
-│ └── index.ts
+│ ├── *-store.ts
+│ ├── types.ts
+│ └── utils.ts
 ├── styles/ # Config global styles and themes
 └── types/  # TypeScript types
 ```
