@@ -15,7 +15,7 @@ const compat = new FlatCompat({
 
 export default defineConfig([
   {
-    extends: compat.extends('next/core-web-vitals', 'plugin:storybook/recommended'),
+    extends: compat.extends('next/core-web-vitals'),
 
     plugins: {
       '@typescript-eslint': typescriptEslint,

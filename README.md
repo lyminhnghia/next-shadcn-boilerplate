@@ -26,7 +26,6 @@ This is a starter template using the following stack:
 ## Feature based organization
 
 ```plaintext
-.storybook/ # Storybook directory
 src/
 ├── app/ # Next.js App Router directory
 │ ├── (auth)/ # Auth route group
